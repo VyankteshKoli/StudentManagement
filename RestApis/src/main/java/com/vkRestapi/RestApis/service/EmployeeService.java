@@ -16,22 +16,18 @@ public class EmployeeService {
         this.repository = repository;
     }
 
-    // CREATE
     public Employee saveEmployee(Employee employee) {
         return repository.save(employee);
     }
 
-    // READ ALL
     public List<Employee> getAllEmployees() {
         return repository.findAll();
     }
 
-    // READ BY ID
     public Employee getEmployeeById(Long id) {
         return repository.findById(id).orElse(null);
     }
 
-    // UPDATE
     public Employee updateEmployee(Long id, Employee newEmployee) {
         Employee emp = repository.findById(id).orElse(null);
 
@@ -44,7 +40,6 @@ public class EmployeeService {
         return null;
     }
 
-    // DELETE
     public void deleteEmployee(Long id) {
         repository.deleteById(id);
     }
